@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+// No need to import defaultTheme.fontFamily if we are defining it fully or using var()
 
 export default {
 	darkMode: ["class"],
@@ -67,6 +68,11 @@ export default {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
+			},
+			fontFamily: {
+                // Use the CSS variable defined in index.css
+                // The CSS variable itself contains the full font stack including fallbacks.
+                sans: ['var(--font-sans)'],
 			},
 			keyframes: {
 				'accordion-down': {
